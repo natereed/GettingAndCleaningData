@@ -15,6 +15,8 @@ load_data_frame <- function(dir, name, col_names) {
   return(df);
 }
 
+setwd(file.path(getwd(), "UCI HAR Dataset"));
+
 # Create a named vector that contains the activity labels by loading in the activities.txt file.
 # It should look like:
 # c("WALKING"=1, "WALKING_UPSTAIRS"=2, "WALKING_DOWNSTAIRS"=3, "SITTING"=4, "STANDING"=5, "LAYING"=6);
