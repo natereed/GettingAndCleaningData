@@ -49,4 +49,4 @@ names(merged_df) <- subset_column_names
 
 # Write to a csv 
 setwd("..");
-write.table(merged_df, "out.csv", row.names=FALSE);
+write.table(merged_df, "out.txt", row.names=FALSE);
