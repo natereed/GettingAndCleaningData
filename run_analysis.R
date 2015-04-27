@@ -1,4 +1,5 @@
 ## run_analysis.R
+library(reshape2)
 
 load_data_frame <- function(dir, name, col_names) {
   path = file.path(dir, name);
@@ -49,6 +50,10 @@ merged_df <- merged_df[,subset_columns]
 subset_column_names <- c("Activity.Id", "Subject.Id", "Activity.Label", as.character(features$V2[measurements]));
 names(merged_df) <- subset_column_names
 
+# Reshape the data
+melted_df <- melt(merged_df, id=c("Subject.Id", "Activity.Id", "Activity.Label"))
+output_df <- dcast(melted_df, Subject.Id + Activity.Id + Activity.Label ~ variable, mean)
+
 # Write to a csv 
 setwd("..");
-write.table(merged_df, "out.txt", row.names=FALSE);
+write.table(output_df, "out.txt", row.names=FALSE);
