@@ -107,7 +107,7 @@ The output of run_analysis.R is a summary of the mean for each of the domain var
 There are 180 rows of 82 observations in the final output.
 
 A single row might look like this:
-
+```
 > output_df[1,]
   Subject.Id Activity.Id Activity.Label tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z tGravityAcc-mean()-X
 1          1           1        WALKING         0.2773308       -0.01738382        -0.1111481            0.9352232
@@ -141,6 +141,7 @@ A single row might look like this:
 1           -0.1335866            0.1067399           -0.5347134        -0.5166919       -0.03350816
   fBodyGyro-std()-Z fBodyAccMag-std() fBodyBodyAccJerkMag-std() fBodyBodyGyroMag-std() fBodyBodyGyroJerkMag-std()
 1        -0.4365622        -0.3980326                -0.1034924              -0.321018                 -0.3816019
+```
 
 ## How the Data was Tidied:
 
