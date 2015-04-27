@@ -16,7 +16,8 @@ load_data_frame <- function(dir, name, col_names) {
   return(df);
 }
 
-setwd(file.path(getwd(), "UCI HAR Dataset"));
+home_dir = getwd();
+setwd(file.path(home_dir, "UCI HAR Dataset"));
 
 # Create a named vector that contains the activity labels by loading in the activities.txt file.
 # It should look like:
@@ -55,5 +56,5 @@ melted_df <- melt(merged_df, id=c("Subject.Id", "Activity.Id", "Activity.Label")
 output_df <- dcast(melted_df, Subject.Id + Activity.Id + Activity.Label ~ variable, mean)
 
 # Write to a csv 
-setwd("..");
+setwd(home_dir);
 write.table(output_df, "out.txt", row.names=FALSE);
